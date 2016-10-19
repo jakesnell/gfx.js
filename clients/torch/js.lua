@@ -344,6 +344,10 @@ function js.chart(data, opts)
    local yFormat = opts.yFormat or '.02e'
    local xLabel = opts.xLabel or ''
    local yLabel = opts.yLabel or ''
+   local xMin = opts.xMin or ''
+   local xMax = opts.xMax or ''
+   local yMin = opts.yMin or ''
+   local yMax = opts.yMax or ''
 
    -- chart
    chart = charts[chart]
@@ -386,6 +390,10 @@ function js.chart(data, opts)
       yFormat = yFormat,
       xLabel = xLabel,
       yLabel = yLabel,
+      xMin = xMin,
+      xMax = xMax,
+      yMin = yMin,
+      yMax = yMax
    }
    local f = io.open(js.static..win..'.html','w')
    f:write(html)

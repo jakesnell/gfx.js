@@ -24,6 +24,14 @@ nv.addGraph(function() {
     chart.xAxis.axisLabel("${xLabel}")
     chart.yAxis.axisLabel("${yLabel}")
 
+    if ("${xMin}" != '' && "${xMax}" != '') {
+        chart.xDomain([Number("${xMin}"), Number("${xMax}")])
+    }
+
+    if ("${yMin}" != '' && "${yMax}" != '') {
+        chart.yDomain([Number("${yMin}"), Number("${yMax}")])
+    }
+
     d3.select('#${id} svg')
         .datum(${data})
         .call(chart);
